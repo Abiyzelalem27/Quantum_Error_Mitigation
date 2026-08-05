@@ -1,11 +1,7 @@
 
 
 
----
 
-## 📄 `pyproject.toml`
-
-```toml
 [build-system]
 requires = ["setuptools>=61.0", "wheel", "setuptools-scm>=6.2"]
 build-backend = "setuptools.build_meta"
@@ -13,14 +9,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "qem"
 version = "0.1.0"
-description = "Quantum Error Mitigation – A production-grade package for quantum error mitigation techniques"
+description = "Quantum Error Mitigation"
 readme = "README.md"
-authors = [
-    {name = "Your Name", email = "you@example.com"},
-]
-maintainers = [
-    {name = "Your Name", email = "you@example.com"},
-]
+
 license = {text = "Apache-2.0"}
 requires-python = ">=3.11"
 keywords = [
