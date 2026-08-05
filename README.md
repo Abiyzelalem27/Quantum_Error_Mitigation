@@ -1,97 +1,126 @@
 
 
-# QEM – Quantum Error Mitigation
+# Quantum Error Mitigation
 
-[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Qiskit](https://img.shields.io/badge/Qiskit-1.0+-purple.svg)](https://qiskit.org/)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Project Status](https://img.shields.io/badge/status-research%20and%20learning-orange.svg)](#project-status)
 
-A comprehensive, production-ready Python package for quantum error mitigation techniques, consolidating the methodologies from the Qiskit Global Summer School 2026 Labs 3, 4b, and 4c.
+A modular research and learning repository for studying **quantum error mitigation, noise-aware quantum algorithms, and hybrid quantum–classical methods**.
+The project focuses on understanding how noise affects quantum computations and how mitigation techniques can improve the quality of measured results.
 
-## 📋 Overview
+---
 
-**QEM** provides a unified interface for applying state-of-the-art quantum error mitigation techniques, including:
+## objectives
 
-- **Samplomatic & Advanced Mitigation** – Boxing, Twirling, NoiseLearnerV3, Propagated Noise Absorption (PNA), and Shaded Lightcones (SLC)
-- **QAOA for Partition Problems** – Graph mapping, Quantum Approximate Optimization Algorithm, Pauli Correlation Encoding, and multiple error mitigation strategies (M3, ZNE, PEC)
-- **Sample-based Quantum Diagonalization** – Molecular ground-state estimation for N₂ using SQD with LUCJ ansatz
 
-All techniques are implemented in a modular, well-tested, and production-ready format suitable for research and industrial applications.
+- quantum noise and its effect on circuit results;
+- error suppression and error mitigation methods;
+- noise-aware execution of quantum algorithms;
+- comparison of mitigated and unmitigated results;
+- hybrid quantum–classical optimization;
+- scalable methods for quantum simulation and optimization;
+- reusable Python tools for quantum-error-mitigation studies.
 
-## 🚀 Features
+---
 
-- **Modular Architecture**: Clean separation of concerns with dedicated subpackages for each lab.
-- **Hardware-Ready**: Seamless integration with Qiskit Runtime for execution on IBM Quantum hardware.
-- **Comprehensive Error Mitigation**: Support for TREX, ZNE, PEC, M3, Dynamical Decoupling, and Pauli Twirling.
-- **Scalable**: Pauli Correlation Encoding reduces qubit requirements for large problems.
-- **Reproducible**: Fixed seeds, job ID management, and pre-trained parameters included.
-- **Well-Tested**: Unit tests and continuous integration ready.
+## Main topics
 
-## 📦 Installation
+### Quantum Approximate Optimization Algorithm
 
-### From PyPI (coming soon)
+The QAOA notebooks study the number-partition problem, including:
+
+- problem formulation;
+- graph and Hamiltonian construction;
+- QAOA circuit design;
+- parameter optimization;
+- noise analysis;
+- error-mitigation comparisons;
+- scaling with Pauli Correlation Encoding.
+
+### Sample-Based Quantum Diagonalization
+
+The SQD notebooks explore hybrid quantum–classical estimation of molecular ground-state energies through:
+
+- quantum-state preparation;
+- sampling of electron configurations;
+- configuration recovery;
+- reduced-subspace construction;
+- classical diagonalization;
+- comparison with classical reference methods.
+
+### Advanced quantum error mitigation
+
+The advanced-mitigation notebooks investigate:
+
+- Pauli twirling;
+- circuit boxing;
+- layerwise noise learning;
+- mirror circuits;
+- propagated noise absorption;
+- readout-error mitigation;
+- probabilistic error cancellation;
+- mitigation bias and sampling cost.
+
+---
+
+## Repository structure
+
+```text
+Quantum_Error_Mitigation/
+├── notebooks/
+│   ├── qaoa_partition_problem/
+│   │   ├── qaoa_theory_setup.ipynb
+│   │   ├── qaoa_error_mitigation.ipynb
+│   │   └── qaoa_scaling_pce.ipynb
+│   │
+│   ├── sample_based_quantum_diagonalization/
+│   │   ├── sqd_setup_ansatz.ipynb
+│   │   └── sqd_sampling_diagonalization.ipynb
+│   │
+│   └── samplomatic_advanced_mitigation/
+│       ├── theory_estimator.ipynb
+│       ├── boxing_twirling.ipynb
+│       ├── noise_learning_executor.ipynb
+│       ├── Ising_chain_Mirror_trick.ipynb
+│       └── PNA_TREX_comparison.ipynb
+│
+├── src/
+│   └── qem/
+│       ├── qaoa_partition_problem/
+│       ├── sample_based_quantum_diagonalization/
+│       ├── samplomatic_advanced_mitigation/
+│       └── utils/
+│
+├── tests/
+├── pyproject.toml
+├── requirements.txt
+├── requirements-dev.txt
+├── LICENSE
+└── README.md
+```
+
+---
+
+## Installation
+
+Clone the repository:
 
 ```bash
-pip install qem
+git clone https://github.com/Abiyzelalem27/Quantum_Error_Mitigation.git
+cd Quantum_Error_Mitigation
+```
 
-# Clone the repository
-git clone https://github.com/Abiyzelalem27/quantum-error-mitigation.git
-cd quantum-error-mitigation
 
-# Create a virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+## License
 
-# Install in development mode
-pip install -e .
+This project is licensed under the **Apache License 2.0**. See [LICENSE](LICENSE) for details.
 
-# Or install with development dependencies
-pip install -e ".[dev]"
+---
 
-from qem import (
-    # Lab 3: Samplomatic & Advanced Mitigation
-    construct_ising_circuit,
-    generate_noise_mitigating_observable,
-    compute_local_scales,
-    
-    # Lab 4b: QAOA & Partition Problem
-    build_partition_graph,
-    configure_estimator_options,
-    reduce_qubits_with_pce,
-    
-    # Lab 4c: Sample-based Quantum Diagonalization
-    build_n2_molecule,
-    run_sqd_loop,
-    
-    # Utilities
-    get_backend,
-    plot_partition_graph,
-)
+## Repository
 
-# Example: Build a partition graph
-numbers = [3, 5, 7, 9, 11, 13]
-graph = build_partition_graph(numbers)
-
-# Example: Configure error mitigation
-options = configure_estimator_options(method='zne', shots=2000)
-
-# Example: Get a backend
-backend = get_backend(family='Heron')
-
-qem/
-├── notebooks/                          
-│   ├── 01_samplomatic_advanced_mitigation/  
-│   ├── 02_qaoa_partition_problem/          
-│   └── 03_sample_based_quantum_diagonalization/ 
-├── src/
-│   └── qem/                             
-│       ├── qaoa_partition_problem/      
-│       ├── sample_based_quantum_diagonalization/ 
-│       ├── samplomatic_advanced_mitigation/ # Samplomatic (Lab 3)
-│       └── utils/                       # Shared utilities
-├── tests/                              # Unit tests
-├── data/                               # Pre-trained parameters
-├── pyproject.toml                      # Package metadata
-├── requirements.txt                    # Core dependencies
-└── README.md                           # This file
-
+```text
+Quantum Error Mitigation
+https://github.com/Abiyzelalem27/Quantum_Error_Mitigation
+```
