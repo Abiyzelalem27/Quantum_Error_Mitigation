@@ -1,7 +1,5 @@
 
 
-# Development Dependencies for QEM
-
 # Core Development
 pytest>=7.0.0
 pytest-cov>=4.0.0

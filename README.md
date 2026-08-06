@@ -2,9 +2,15 @@
 
 # Quantum Error Mitigation
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Project Status](https://img.shields.io/badge/status-research%20and%20learning-orange.svg)](#project-status)
+## Technology Stack
+
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Qiskit](https://img.shields.io/badge/Qiskit-Quantum_Computing-6929C4)](https://www.ibm.com/quantum/qiskit)
+[![NumPy](https://img.shields.io/badge/NumPy-Scientific_Computing-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![SciPy](https://img.shields.io/badge/SciPy-Numerical_Methods-8CAAE6?logo=scipy&logoColor=white)](https://scipy.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-blue)](https://matplotlib.org/)
+
 
 A modular research and learning repository for studying **quantum error mitigation, noise-aware quantum algorithms, and hybrid quantum–classical methods**.
 The project focuses on understanding how noise affects quantum computations and how mitigation techniques can improve the quality of measured results.

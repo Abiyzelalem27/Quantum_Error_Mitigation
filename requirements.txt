@@ -1,6 +1,6 @@
 
 
-# Core Dependencies for QEM – Quantum Error Mitigation
+# Quantum Error Mitigation
 
 # Qiskit Ecosystem
 qiskit>=1.0.0
@@ -40,7 +40,7 @@ pylatexenc>=2.0
 # Performance
 rustworkx>=0.15.0
 
-# Grading (for educational notebooks)
+# Grading 
 qc-grader>=0.1.0
 
 # Utility
