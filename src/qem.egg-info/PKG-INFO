@@ -1,0 +1,181 @@
+Metadata-Version: 2.4
+Name: qem
+Version: 0.1.0
+Summary: Quantum Error Mitigation
+License: Apache-2.0
+Keywords: quantum computing,error mitigation,qiskit,quantum advantage,QAOA,SQD,samplomatic
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: qiskit>=1.0.0
+Requires-Dist: qiskit-ibm-runtime>=0.47.0
+Requires-Dist: qiskit-aer>=0.15.0
+Requires-Dist: samplomatic>=0.16.0
+Requires-Dist: qiskit-addon-pna>=0.1.0
+Requires-Dist: qiskit-addon-slc>=0.1.0
+Requires-Dist: qiskit-addon-sqd>=0.11.0
+Requires-Dist: qiskit-addon-opt-mapper>=0.1.0
+Requires-Dist: mthree>=1.0.0
+Requires-Dist: ffsim>=0.0.72
+Requires-Dist: pyscf>=2.0.0
+Requires-Dist: mitiq>=0.45.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: matplotlib>=3.7.0
+Requires-Dist: networkx>=3.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: pylatexenc>=2.0
+Requires-Dist: rustworkx>=0.15.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pre-commit>=3.0.0; extra == "dev"
+Requires-Dist: ipykernel>=6.0.0; extra == "dev"
+Requires-Dist: jupyter>=1.0.0; extra == "dev"
+Requires-Dist: notebook>=6.0.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=5.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.0.0; extra == "docs"
+Dynamic: license-file
+
+
+
+# Quantum Error Mitigation
+
+## Technology Stack
+
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Qiskit](https://img.shields.io/badge/Qiskit-Quantum_Computing-6929C4)](https://www.ibm.com/quantum/qiskit)
+[![NumPy](https://img.shields.io/badge/NumPy-Scientific_Computing-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![SciPy](https://img.shields.io/badge/SciPy-Numerical_Methods-8CAAE6?logo=scipy&logoColor=white)](https://scipy.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-blue)](https://matplotlib.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+
+A modular research and learning repository for studying **quantum error mitigation, noise-aware quantum algorithms, and hybrid quantum–classical methods**.
+The project focuses on understanding how noise affects quantum computations and how mitigation techniques can improve the quality of measured results.
+
+---
+
+## objectives
+
+
+- quantum noise and its effect on circuit results;
+- error suppression and error mitigation methods;
+- noise-aware execution of quantum algorithms;
+- comparison of mitigated and unmitigated results;
+- hybrid quantum–classical optimization;
+- scalable methods for quantum simulation and optimization;
+- reusable Python tools for quantum-error-mitigation studies.
+
+---
+
+## Main topics
+
+### Quantum Approximate Optimization Algorithm
+
+The QAOA notebooks study the number-partition problem, including:
+
+- problem formulation;
+- graph and Hamiltonian construction;
+- QAOA circuit design;
+- parameter optimization;
+- noise analysis;
+- error-mitigation comparisons;
+- scaling with Pauli Correlation Encoding.
+
+### Sample-Based Quantum Diagonalization
+
+The SQD notebooks explore hybrid quantum–classical estimation of molecular ground-state energies through:
+
+- quantum-state preparation;
+- sampling of electron configurations;
+- configuration recovery;
+- reduced-subspace construction;
+- classical diagonalization;
+- comparison with classical reference methods.
+
+### Advanced quantum error mitigation
+
+The advanced-mitigation notebooks investigate:
+
+- Pauli twirling;
+- circuit boxing;
+- layerwise noise learning;
+- mirror circuits;
+- propagated noise absorption;
+- readout-error mitigation;
+- probabilistic error cancellation;
+- mitigation bias and sampling cost.
+
+---
+
+## Repository structure
+
+```text
+Quantum_Error_Mitigation/
+├── notebooks/
+│   ├── qaoa_partition_problem/
+│   │   ├── qaoa_theory_setup.ipynb
+│   │   ├── qaoa_error_mitigation.ipynb
+│   │   └── qaoa_scaling_pce.ipynb
+│   │
+│   ├── sample_based_quantum_diagonalization/
+│   │   ├── sqd_setup_ansatz.ipynb
+│   │   └── sqd_sampling_diagonalization.ipynb
+│   │
+│   └── samplomatic_advanced_mitigation/
+│       ├── theory_estimator.ipynb
+│       ├── boxing_twirling.ipynb
+│       ├── noise_learning_executor.ipynb
+│       ├── Ising_chain_Mirror_trick.ipynb
+│       └── PNA_TREX_comparison.ipynb
+│
+├── src/
+│   └── qem/
+│       ├── qaoa_partition_problem/
+│       ├── sample_based_quantum_diagonalization/
+│       ├── samplomatic_advanced_mitigation/
+│       └── utils/
+│
+├── tests/
+├── pyproject.toml
+├── requirements.txt
+├── requirements-dev.txt
+├── LICENSE
+└── README.md
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Abiyzelalem27/Quantum_Error_Mitigation.git
+cd Quantum_Error_Mitigation
+```
+
+
+---
+
+## Repository
+
+```text
+Quantum Error Mitigation
+https://github.com/Abiyzelalem27/Quantum_Error_Mitigation
+```

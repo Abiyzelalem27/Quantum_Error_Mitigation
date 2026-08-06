@@ -40,8 +40,11 @@ pylatexenc>=2.0
 # Performance
 rustworkx>=0.15.0
 
-# Grading 
+# Grading
 qc-grader>=0.1.0
 
 # Utility
-ipython>=8.0.0 
+ipython>=8.0.0
+
+# Quantum Optimization Best Practices
+qopt_best_practices @ git+https://github.com/qiskit-community/qopt-best-practices.git
